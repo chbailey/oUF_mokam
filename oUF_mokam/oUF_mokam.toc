@@ -1,0 +1,30 @@
+## Interface: 40200
+## Author: mokam -- DE-Arygos
+## Title: oUF_mokam
+## Notes: DfK-Crew
+## RequiredDeps: oUF
+## X-Category: UnitFrame
+OptionalDeps: BigWigs, BigWigs_Plugins
+
+## thx to zork with ouf_diablo and ouf_simpleX, phanx (ouf_phanx)
+
+modules\oUF_Experience.lua
+modules\oUF_Smooth.lua
+modules\oUF_Vengeance.lua
+
+cfg.lua
+
+libs\unit.lua
+libs\functions.lua
+libs\tags.lua
+
+units\player.lua
+units\target.lua
+units\targettarget.lua
+units\focus.lua
+units\frame.lua
+
+
+## ADDONS
+addons\BigWigs_BarStyle\barstyle.lua
+addons\qMinimap\qMinimap.lua
