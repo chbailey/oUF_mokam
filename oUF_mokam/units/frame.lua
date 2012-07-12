@@ -108,7 +108,7 @@ local createBRFrame = function()
   	s:SetFrameStrata("BACKGROUND")
 	s:SetPoint("BOTTOMRIGHT", frame.RaidBuff, "BOTTOMLEFT", -10, 0)
 	s:SetPoint("TOPRIGHT", frame.Minimap, "TOPLEFT", -10, 0)
-	s:SetWidth(220)--frame.Chat:GetWidth()-frame.Minimap:GetWidth()-10
+	s:SetWidth(((frame.Minimap:GetWidth()-10)/2)*3+20)	--passende breite für raidframes
 	
 	local h = CreateFrame("Frame", nil, s)
 	h:SetFrameLevel(0)
