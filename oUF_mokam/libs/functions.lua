@@ -152,7 +152,7 @@ local backdrop_tab = {
 func.createBackdrop = function(self)
 	self:SetBackdrop(backdrop_tab);
 	self:SetBackdropColor(0,0,0,0.8)
-	self:SetBackdropBorderColor(0,0,0,1)
+	self:SedtBackdropBorderColor(0,0,0,1)
 end
 
 func.createBackdrop_thin = function(self)
