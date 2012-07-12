@@ -5,25 +5,43 @@ Minimap:SetSize(ouf_mokamMinimapFrame:GetWidth()-4, ouf_mokamMinimapFrame:GetWid
 local dummy = function() end
 local _G = getfenv(0)
 
-local frames = {
-    "GameTimeFrame",
-    "MinimapBorderTop",
-    "MinimapNorthTag",
-    "MinimapBorder",
-    "MinimapZoneTextButton",
-    "MinimapZoomOut",
-    "MinimapZoomIn",
-    "MiniMapVoiceChatFrame",
-    "MiniMapWorldMapButton",
-    "MiniMapMailBorder",
-	"GuildInstanceDifficulty",
-    "MiniMapBattlefieldBorder",
-}
 
-for i in pairs(frames) do
-    _G[frames[i]]:Hide()
-    _G[frames[i]].Show = dummy
-end
+-- Hide Border
+MinimapBorder:Hide()
+MinimapBorderTop:Hide()
+
+-- Hide Zoom Buttons
+MinimapZoomIn:Hide()
+MinimapZoomOut:Hide()
+
+-- Hide Voice Chat Frame
+MiniMapVoiceChatFrame:Hide()
+
+-- Hide North texture at top
+MinimapNorthTag:SetTexture(nil)
+
+-- Hide Zone Frame
+MinimapZoneTextButton:Hide()
+
+-- Hide Tracking Button
+MiniMapTracking:Hide()
+
+-- Hide Calendar Button
+GameTimeFrame:Hide()
+MinimapCluster:EnableMouse(false)
+
+--Tracking
+MiniMapTrackingBackground:SetAlpha(0)
+MiniMapTrackingButton:SetAlpha(0)
+MiniMapTracking:ClearAllPoints()
+MiniMapTracking:SetPoint("BOTTOMRIGHT", Minimap, 0, 0)
+MiniMapTracking:SetScale(.9)
+
+
+
+-- Hide world map button
+MiniMapWorldMapButton:Hide()
+
 local shadows = {
 	edgeFile = "Interface\\Addons\\ouf_mokam\\addons\\qMinimap\\media\\glowTex", 
 	edgeSize = 4,
@@ -39,7 +57,6 @@ function CreateShadow(f)
 	shadow:SetBackdrop(shadows)
 	shadow:SetBackdropColor(0, 0, 0, 0)
 	shadow:SetBackdropBorderColor(0, 0, 0, 1)
-	shadow:SetAlpha(0)
 	f.shadow = shadow
 	return shadow
 end
@@ -54,7 +71,6 @@ function CreateInnerBorder(f)
 	  insets = { left = -1, right = -1, top = -1, bottom = -1}
 	})
 	f.iborder:SetBackdropBorderColor(0, 0, 0)
-	f.iborder:SetAlpha(0)
 	return f.iborder
 end
 function frame1px(f)
@@ -69,28 +85,17 @@ CreateInnerBorder(f)
 end
 
 
-MinimapCluster:EnableMouse(false)
-
---Tracking
-MiniMapTrackingBackground:SetAlpha(0)
-MiniMapTrackingButton:SetAlpha(0)
-MiniMapTracking:ClearAllPoints()
-MiniMapTracking:SetPoint("BOTTOMRIGHT", Minimap, 0, 0)
-MiniMapTracking:SetScale(.9)
-
---BG icon
-MiniMapBattlefieldFrame:ClearAllPoints()
-MiniMapBattlefieldFrame:SetPoint("BOTTOMLEFT", Minimap, 0, 0)
-
---LFG icon
-MiniMapLFGFrame:ClearAllPoints()
-MiniMapLFGFrameBorder:SetAlpha(0)
-MiniMapLFGFrame:SetPoint("TOPLEFT", Minimap, 0, 0)
+-- Reposition lfg icon at bottom-left
+local function UpdateLFG()
+	MiniMapLFGFrame:ClearAllPoints()
+	MiniMapLFGFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 2, 1)
+	MiniMapLFGFrameBorder:Hide()
+end
 
 MiniMapMailFrame:ClearAllPoints()
 MiniMapMailFrame:SetPoint("TOPRIGHT", Minimap, 0, 0)
 MiniMapMailFrame:SetFrameStrata("LOW")
-MiniMapMailIcon:SetTexture("Interface\\AddOns\\ouf_mokam\\addons\\qMinimap\\media\\mail.tga")
+MiniMapMailIcon:SetTexture("Interface\\Addons\\ouf_mokam\\addons\\qMinimap\\media\\mail")
 MiniMapMailBorder:Hide()
 
 ---Hide Instance Difficulty flag
