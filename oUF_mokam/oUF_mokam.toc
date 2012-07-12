@@ -6,7 +6,7 @@
 ## X-Category: UnitFrame
 OptionalDeps: BigWigs, BigWigs_Plugins
 
-## thx to zork with ouf_diablo and ouf_simpleX, phanx (ouf_phanx)
+## thx to zork with ouf_diablo and ouf_simpleX, phanx (ouf_phanx), Qulight (qMinimap)
 
 modules\oUF_Experience.lua
 modules\oUF_Smooth.lua
@@ -14,6 +14,7 @@ modules\oUF_Vengeance.lua
 
 cfg.lua
 
+##libs\slashcmd.lua
 libs\unit.lua
 libs\functions.lua
 libs\tags.lua
@@ -23,6 +24,7 @@ units\target.lua
 units\targettarget.lua
 units\focus.lua
 units\frame.lua
+units\boss.lua
 
 
 ## ADDONS
