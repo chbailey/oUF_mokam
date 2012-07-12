@@ -46,10 +46,10 @@ local function utf8sub(string, i, dots)
 end
 
 
-oUF.Tags['makom:classcolor'] = function(unit)
+oUF.Tags.Methods['makom:classcolor'] = function(unit)
 	local reaction = UnitReaction(unit, "player")
 	if UnitIsPlayer(unit) then
-		local s = oUF.Tags["raidcolor"](unit)
+		local s = oUF.Tags.Methods["raidcolor"](unit)
 		return s
 	elseif reaction then
 		local r , g , b = unpack(oUF.colors.reaction[reaction])
@@ -59,12 +59,12 @@ oUF.Tags['makom:classcolor'] = function(unit)
 		return string.format("|cff%02x%02x%02x", r * 255, g * 255, b * 255)
 	end
 end
-oUF.TagEvents['makom:classcolor'] = 'UNIT_POWER'
+oUF.Tags.Events['makom:classcolor'] = 'UNIT_POWER'
 
 ---------------------------------------------
 
 -- unit status tag
-oUF.Tags['mono:DDG'] = function(u)
+oUF.Tags.Methods['mono:DDG'] = function(u)
 	if not UnitIsConnected(u) then
 		return "|cffCFCFCF D/C|r"
 	elseif UnitIsGhost(u) then
@@ -73,13 +73,13 @@ oUF.Tags['mono:DDG'] = function(u)
 		return "|cffCFCFCF Dead|r"
 	end
 end
-oUF.TagEvents['mono:DDG'] = 'UNIT_NAME_UPDATE UNIT_HEALTH UNIT_CONNECTION'
+oUF.Tags.Events['mono:DDG'] = 'UNIT_NAME_UPDATE UNIT_HEALTH UNIT_CONNECTION'
 
 ---------------------------------------------
 
-oUF.Tags['makom:hp']  = function(u)
+oUF.Tags.Methods['makom:hp']  = function(u)
   if UnitIsDead(u) or UnitIsGhost(u) or not UnitIsConnected(u) then
-    return oUF.Tags['mono:DDG'](u)
+    return oUF.Tags.Methods['mono:DDG'](u)
   else
 	local curhp = UnitHealth(u)
     if (u == "target" or u == "player") then
@@ -89,15 +89,15 @@ oUF.Tags['makom:hp']  = function(u)
 	end
   end
 end
-oUF.TagEvents['makom:hp'] = 'UNIT_HEALTH UNIT_CONNECTION'
+oUF.Tags.Events['makom:hp'] = 'UNIT_HEALTH UNIT_CONNECTION'
 
 ---------------------------------------------
 
-oUF.Tags['makom:perhp']  = function(u)
+oUF.Tags.Methods['makom:perhp']  = function(u)
 	if UnitIsDead(u) or UnitIsGhost(u) or not UnitIsConnected(u) then
-		return --oUF.Tags['mono:DDG'](u)
+		return --oUF.Tags.Methods['mono:DDG'](u)
 	else
-		local per = oUF.Tags['perhp'](u)
+		local per = oUF.Tags.Methods['perhp'](u)
 		if ((u == "target" or u == "player") and per~=100) then
 			local mult = 10^(1)
 			local perhp = 100*UnitHealth(u)/UnitHealthMax(u)
@@ -107,57 +107,57 @@ oUF.Tags['makom:perhp']  = function(u)
 		end
 	end
 end
-oUF.TagEvents['makom:perhp'] = 'UNIT_HEALTH UNIT_CONNECTION'
+oUF.Tags.Events['makom:perhp'] = 'UNIT_HEALTH UNIT_CONNECTION'
 
 ---------------------------------------------
 
-oUF.Tags['makom:perpp']  = function(u)
-	local per = oUF.Tags['perpp'](u)
+oUF.Tags.Methods['makom:perpp']  = function(u)
+	local per = oUF.Tags.Methods['perpp'](u)
 	if ((u == "target" or u == "player") and (per~=100 and per~=0)) then
 		return per
 	else
 		return
 	end
 end
-oUF.TagEvents['makom:perpp'] = 'UNIT_POWER UNIT_CONNECTION'
+oUF.Tags.Events['makom:perpp'] = 'UNIT_POWER UNIT_CONNECTION'
 
 ---------------------------------------------
 
-oUF.Tags['makom:curpp']  = function(u)
+oUF.Tags.Methods['makom:curpp']  = function(u)
 	local curpp = UnitPower(u)
 	if curpp ~= 0 then
 		return SVal(curpp)
 	end
 	return
 end
-oUF.TagEvents['makom:curpp'] = 'UNIT_POWER UNIT_CONNECTION'
+oUF.Tags.Events['makom:curpp'] = 'UNIT_POWER UNIT_CONNECTION'
 
 ---------------------------------------------
 
-oUF.Tags['makom:maxpp']  = function(u)
-	local maxpp = oUF.Tags['maxpp'](u)
-	local perpp = oUF.Tags['perpp'](u)
+oUF.Tags.Methods['makom:maxpp']  = function(u)
+	local maxpp = oUF.Tags.Methods['maxpp'](u)
+	local perpp = oUF.Tags.Methods['perpp'](u)
 	if ((u == "target" or u == "player") and (perpp~=100 and perpp~=0)) then
 		return "/" .. SVal(maxpp)
 	end
 end
-oUF.TagEvents['makom:maxpp'] = 'UNIT_POWER UNIT_CONNECTION'
+oUF.Tags.Events['makom:maxpp'] = 'UNIT_POWER UNIT_CONNECTION'
 
 ---------------------------------------------
 
-oUF.Tags['mono:longname'] = function(u, r)
+oUF.Tags.Methods['mono:longname'] = function(u, r)
 	local name = UnitName(r or u)
 	return utf8sub(name,22, true)--16
 end
-oUF.TagEvents['mono:longname'] = 'UNIT_NAME_UPDATE UNIT_CONNECTION'
+oUF.Tags.Events['mono:longname'] = 'UNIT_NAME_UPDATE UNIT_CONNECTION'
 
 ---------------------------------------------
 
-oUF.Tags['mono:longnametot'] = function(u, r)
+oUF.Tags.Methods['mono:longnametot'] = function(u, r)
 local name = UnitName(r or u)
 return utf8sub(name,15, true)--16
 end
-oUF.TagEvents['mono:longnametot'] = 'UNIT_NAME_UPDATE UNIT_CONNECTION'
+oUF.Tags.Events['mono:longnametot'] = 'UNIT_NAME_UPDATE UNIT_CONNECTION'
 
 ---------------------------------------------
 
