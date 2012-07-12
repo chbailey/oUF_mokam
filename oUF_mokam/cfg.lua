@@ -85,6 +85,19 @@ cfg.units = {
 			tagr = ""
 		}
 	},
+	boss = {
+		show = true,
+		scale = 1,
+		texture = "Interface\\AddOns\\oUF_mokam\\media\\statusbar512x64",
+		health = {
+			tagl = "[makom:classcolor][mono:longname]",
+			tagr = ""
+		},
+		power = {
+			tagl = "",
+			tagr = ""
+		}
+	},
 	frame = {
 		show = true
 	}

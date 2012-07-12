@@ -130,5 +130,4 @@ end
 createBLFrame()
 createBRFrame()
 
-
-ns.unit = unit
+unit.frame = frame
