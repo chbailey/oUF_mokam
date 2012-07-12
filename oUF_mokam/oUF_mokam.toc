@@ -1,4 +1,4 @@
-## Interface: 40200
+## Interface: 50001
 ## Author: mokam -- DE-Arygos
 ## Title: oUF_mokam
 ## Notes: DfK-Crew
@@ -14,7 +14,7 @@ modules\oUF_Vengeance.lua
 
 cfg.lua
 
-##libs\slashcmd.lua
+libs\slashcmd.lua
 libs\unit.lua
 libs\functions.lua
 libs\tags.lua
