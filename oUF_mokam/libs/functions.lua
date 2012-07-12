@@ -167,6 +167,13 @@ func.createBackdrop_bar = function(self)
 	self:SetBackdropBorderColor(0,0,0,0.9)
 end
 
+func.createBackdrop_Orbs = function(self)
+	self:SetBackdrop(backdrop_tab);
+	local r,g,b = 104,34,139
+	self:SetBackdropColor(r/255,g/255,b/255,1)
+	self:SetBackdropBorderColor(0,0,0,1)
+end
+
 ---------------------------------------
 -- HANDOVER
 
