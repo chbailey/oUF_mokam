@@ -84,7 +84,7 @@ local createShadowOrbs = function(self)
 	
 	self.Info = s
 	
---[[local ShadowOrbs = {}
+	local ShadowOrbs = {}
 	for index = 1, PRIEST_BAR_NUM_ORBS do
 		local Orb = CreateFrame("Frame", nil, self)
 	  	Orb:SetFrameStrata("LOW")
@@ -112,7 +112,7 @@ local createShadowOrbs = function(self)
    	end
    
    -- Register with oUF
-   self.ShadowOrbs = ShadowOrbs]]
+   self.ShadowOrbs = ShadowOrbs
 
 
 end
