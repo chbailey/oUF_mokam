@@ -83,12 +83,12 @@ end
 
 local createInfoStrings = function(self)
 	
-	local tagr = func.createFontString(self.Info , cfg.fontnumber , 15, "OUTLINE")
+	local tagr = func.createFontString(self.Info , cfg.fonttext , 11, "THINOUTLINE")
 	tagr:SetPoint("RIGHT", self.Info, "RIGHT", -2, 0)
     tagr:SetJustifyH("RIGHT")
 	self:Tag(tagr, self.cfg.info.tagr)
 
-	local tagl = func.createFontString(self.Info , cfg.fontnumber , 15, "OUTLINE")
+	local tagl = func.createFontString(self.Info , cfg.fonttext , 11, "THINOUTLINE")
 	tagl:SetPoint("LEFT", self.Info, "LEFT", 2, 0)
     tagl:SetJustifyH("LEFT")
 	self:Tag(tagl, self.cfg.info.tagl)
@@ -123,12 +123,12 @@ end
 
 local createPowerStrings = function(self)
 	
-	local tagr = func.createFontString(self.Power , cfg.fontnumber , 15, "OUTLINE")
+	local tagr = func.createFontString(self.Power , cfg.fonttext , 11, "THINOUTLINE")
 	tagr:SetPoint("RIGHT", self.Power, "RIGHT", -2, 0)
     tagr:SetJustifyH("RIGHT")
 	self:Tag(tagr, self.cfg.power.tagr)
 
-	local tagl = func.createFontString(self.Power , cfg.fontnumber , 15, "OUTLINE")
+	local tagl = func.createFontString(self.Power , cfg.fonttext , 11, "THINOUTLINE")
 	tagl:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
     tagl:SetJustifyH("LEFT")
 	self:Tag(tagl, self.cfg.power.tagl)
