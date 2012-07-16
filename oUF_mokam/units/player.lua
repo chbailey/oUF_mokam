@@ -145,12 +145,12 @@ end
 
 local createPowerStrings = function(self)
 	
-	local tagr = func.createFontString(self.Power , cfg.fontnumber , 15, "OUTLINE")
+	local tagr = func.createFontString(self.Power , cfg.fonttext , 11, "OUTLINE")
 	tagr:SetPoint("RIGHT", self.Power, "RIGHT", -2, 0)
     tagr:SetJustifyH("RIGHT")
 	self:Tag(tagr, self.cfg.power.tagr)
 
-	local tagl = func.createFontString(self.Power , cfg.fontnumber , 15, "OUTLINE")
+	local tagl = func.createFontString(self.Power , cfg.fonttext , 11, "OUTLINE")
 	tagl:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
     tagl:SetJustifyH("LEFT")
 	self:Tag(tagl, self.cfg.power.tagl)
@@ -181,7 +181,7 @@ func.createCastbar = function(self)
 	b:SetAllPoints(s)
 	b:SetVertexColor(0.4*0.3,0.4*0.3,0.4*0.3,0.3)  
 	
-	local txt = func.createFontString(s, cfg.font, 15, "THINOUTLINE")
+	local txt = func.createFontString(s, cfg.fonttext, 11, "THINOUTLINE")
 	txt:SetPoint("LEFT", 2, 0)
 	txt:SetJustifyH("LEFT")
 
@@ -224,7 +224,7 @@ end
 local createDebuffs = function(self)
 
 	local b = CreateFrame("Frame", nil, self)
-	b.size = self.cfg.height
+	b.size = self.cfg.height*2+10
 	b.num = 21
 	b.spacing = 10
 	b.onlyShowPlayer = false

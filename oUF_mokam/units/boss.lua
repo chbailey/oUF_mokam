@@ -50,12 +50,12 @@ end
 
 local createHealthStrings = function(self)
 	
-	local tagr = func.createFontString(self.Health , cfg.fontnumber , 33, "OUTLINE")
+	local tagr = func.createFontString(self.Health , cfg.fonttext , 11, "OUTLINE")
 	tagr:SetPoint("BOTTOMRIGHT", self.Health, "BOTTOMRIGHT", 0, -2)
     tagr:SetJustifyH("RIGHT")
 	self:Tag(tagr, self.cfg.health.tagr)
 
-	local tagl = func.createFontString(self.Health , cfg.fontnumber , 19, "OUTLINE")
+	local tagl = func.createFontString(self.Health , cfg.fonttext , 11, "OUTLINE")
 	tagl:SetPoint("LEFT", self.Health, "LEFT", 5, 0)
     tagl:SetJustifyH("LEFT")
 	self:Tag(tagl, self.cfg.health.tagl)
@@ -90,12 +90,12 @@ end
 
 local createPowerStrings = function(self)
 	
-	local tagr = func.createFontString(self.Power , cfg.fontnumber , 15, "OUTLINE")
+	local tagr = func.createFontString(self.Power , cfg.fonttext , 11, "THINOUTLINE")
 	tagr:SetPoint("RIGHT", self.Power, "RIGHT", -2, 0)
     tagr:SetJustifyH("RIGHT")
 	self:Tag(tagr, self.cfg.power.tagr)
 
-	local tagl = func.createFontString(self.Power , cfg.fontnumber , 15, "OUTLINE")
+	local tagl = func.createFontString(self.Power , cfg.fonttext , 11, "THINOUTLINE")
 	tagl:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
     tagl:SetJustifyH("LEFT")
 	self:Tag(tagl, self.cfg.power.tagl)
@@ -124,7 +124,7 @@ func.createCastbar = function(self)
 	b:SetAllPoints(s)
 	b:SetVertexColor(0.4*0.3,0.4*0.3,0.4*0.3,0.3)  
 	
-	local txt = func.createFontString(s, cfg.font, 15, "THINOUTLINE")
+	local txt = func.createFontString(s, cfg.fonttext, 11, "THINOUTLINE")
 	txt:SetPoint("LEFT", s, "LEFT", 5, 0)
 	txt:SetJustifyH("LEFT")
 
@@ -133,7 +133,7 @@ func.createCastbar = function(self)
 	sp:SetAlpha(0.5)
 	sp:SetHeight(s:GetHeight()*2.5)
 
-	local t = func.createFontString(s, cfg.font, 13, "THINOUTLINE")
+	local t = func.createFontString(s, cfg.fonttext, 11, "THINOUTLINE")
 	t:SetPoint("RIGHT", -2, 0)
 
 	local i = s:CreateTexture(nil, "ARTWORK")

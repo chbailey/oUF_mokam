@@ -108,7 +108,7 @@ cfg.backdrop_texture = "Interface\\AddOns\\oUF_mokam\\media\\backdrop"
 cfg.backdrop_edge_texture = "Interface\\AddOns\\oUF_mokam\\media\\backdrop_edge"
 cfg.fontnumber = "Interface\\AddOns\\oUF_mokam\\media\\Antipasto_edit.ttf"
 cfg.font = "Interface\\AddOns\\oUF_mokam\\media\\Antipasto_edit.ttf"
-cfg.fontraid = "FONTS\\font.ttf"
+cfg.fonttext  = "Interface\\Addons\\oUF_mokam\\media\\Myriad-web.ttf"
 
 BuffFrame:Hide()
 
