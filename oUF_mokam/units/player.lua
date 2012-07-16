@@ -224,7 +224,7 @@ end
 local createDebuffs = function(self)
 
 	local b = CreateFrame("Frame", nil, self)
-	b.size = self.cfg.height
+	b.size = self.cfg.height*2+10
 	b.num = 21
 	b.spacing = 10
 	b.onlyShowPlayer = false
